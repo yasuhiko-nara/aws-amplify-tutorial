@@ -7,6 +7,7 @@ import {
   createNote as createNoteMutation,
   deleteNote as deleteNoteMutation,
 } from "./graphql/mutations";
+import { API, Storage } from "aws-amplify";
 
 const initialFormState = { name: "", description: "" };
 
