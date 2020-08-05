@@ -17,6 +17,7 @@ function App() {
   useEffect(() => {
     fetchNotes();
   }, []);
+
   async function fetchNotes() {
     const apiData = await API.graphql({ query: listNotes });
     const notesFromAPI = apiData.data.listNotes.items;
@@ -79,7 +80,9 @@ function App() {
         value={formData.description}
       />
       <input type="file" onChange={onChange} />
-      <button onClick={createNote}>Create Note</button>
+      <div>
+        <button onClick={createNote}>Create Note</button>
+      </div>
       <div style={{ marginBottom: 30 }}>
         {notes.map((note) => (
           <div key={note.id || note.name}>
